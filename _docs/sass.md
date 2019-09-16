@@ -71,6 +71,8 @@ Not quite as many of them, but still stuff I use all the time.
 #### @extend %truncate;
 This will tell your element not to wrap, and any text that runs too long will be cut of with an ellipsis.
 
+---
+
 #### @extend %commalist;
 This will turn your ol or ul into a comma separated list (with and and without an oxford comma)
 <ul><li>one</li><li>two</li><li>three</li><li>four</li></ul>
