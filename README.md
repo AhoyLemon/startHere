@@ -1,5 +1,4 @@
-# startHere
- There are many boilerplates. This one is mine.
+# There are many boilerplates. This one is mine.
 
 ## What is this?
 This is the starting point that I ([Lemon](https://ahoylemon.xyz)) use every time I make a new website. It's built using my own aesthetics.
