@@ -3,6 +3,8 @@
 ## Mixins
 Here's some mixins you can use all over the place in your Sass. Fields with a default are marked with a colon (ex: `$align:stretch`). Fields without a colon have no default value.
 
+### Flexbox stuff.
+
 #### @include flex-container($direction:row, $align:stretch, $wrap:wrap);
 This will create a container element with `display:flex` and the default values you want in most flex containers. If you want to change the `align-items` property, do that with the `$align` variable.
 
@@ -24,6 +26,8 @@ Needs no variables. Creates a `flex-container()` which will vertically and horiz
 
 ---
 
+### Backgrounds
+
 ##### @include linear-gradient($direction, $fromColor, $toColor);
 Creates a simple linear gradient from one color to another. Includes lots of browser vendors if you want them.
 
@@ -38,12 +42,16 @@ Always from the center.
 
 ---
 
+### Position
+
 #### @include position($type, $top:null, $right:null, $bottom:null, $left:null)
 This one I use constantly, just to define a shorthand to typing five different attributes. If left null, each direction will stay undefined.
 
 **example:** `@include position(absolute,0,null,null,0)` // Position absolute, top left. (right and bottom undefined)
 
 ---
+
+### Media Queries
 
 ### respond-to($media)
 Accepts either `desktop` or `mobile` as values. Any code put inside will be media queried using your site's `$mobile-max` and `$desktop-min` values.
@@ -66,4 +74,5 @@ This will tell your element not to wrap, and any text that runs too long will be
 #### @extend %commalist;
 This will turn your ol or ul into a comma separated list (with and and without an oxford comma)
 <ul><li>one</li><li>two</li><li>three</li><li>four</li></ul>
-becomes **one, two, three and four**
+becomes
+<strong>one, two, three and four</strong>
