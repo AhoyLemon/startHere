@@ -17,6 +17,12 @@ Generates a random (whole) number between the minimum and maximum
 
 ---  
 
+####  addCommas(number);
+Takes any large number and formats it like 10,232,021
+
+**example:**  `addCommas(10232021);`
+
+
 ####  randomFrom(array);
 If you have a simple array, this will pluck a random selection from that array.
 

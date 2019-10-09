@@ -11,6 +11,11 @@ function shuffle(o){
   return o;
 }
 
+function addCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
 function findInArray(haystack,needle) {
   let n = haystack.indexOf(needle);
   if (n > -1) {
