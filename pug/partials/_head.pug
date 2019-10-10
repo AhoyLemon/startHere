@@ -1,6 +1,6 @@
 head
   meta(charset="utf-8")
-  if pageTitle
+  if !pageTitle
     title= siteTitle
   else 
     title #{siteTitle} | #{pageTitle}
