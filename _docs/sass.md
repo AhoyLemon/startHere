@@ -53,12 +53,26 @@ Always from the center in this case.
 ####  @include position($type, $top:null, $right:null, $bottom:null, $left:null)
 This one I use constantly, just to define a shorthand to typing five different attributes. If left null, each direction will stay undefined.
 
-**example:**  `@include position(absolute,0,null,null,0)` 
-*// Position absolute, top left. (right and bottom undefined)*
+**example:**  
+```scss
+@include position(absolute,0,null,null,0);
+// absolute box at the top left, right and bottom are undefined.
+```
 
 ---
 
-###  respond-to($media)
+####  inner($width:$max-width,$padding:20px)
+
+I usee this as an easy way to define a centered internal column that will shrink on lower resolutions (for example, a box that's 1200 pixels wide, and centered on the screen, but if your browser is smaller than that, it will be 100% of the screen with padding on the side). This doesn't *need* arguments. If no arguments are given, this will assume whatever is defined as `$max-width` in your project, and 20 pixels on the left and right side.
+
+**example:**
+```scss
+@include inner()
+```
+
+---
+
+####  respond-to($media)
 
 Accepts either `desktop` or `mobile` as values. Any code put inside will be media queried using your site's `$mobile-max` and `$desktop-min` values.
 
