@@ -22,32 +22,48 @@ Here's some mixins you can use all over the place in your Sass. Fields with a de
 ####  @include flex-container($direction:row, $align:stretch, $wrap:wrap)
 This will create a container element with `display:flex` and the default values you want in most flex containers. If you want to change the `align-items` property, do that with the `$align` variable.
 
-**example:**  `@include flex-container()`;
+**example:**  
+```scss
+@include flex-container();
+```
 
 ---
 ####  @include flex-item($basis, $grow:1, $shrink:1, $alignSelf:auto);
 Meant to be used on any children of `flex-container()`. If you allow the item to grow, it will, where convenient. If not, it has an explicit width.
 
-**example:**  `@include flex-item(25%,0,1);` 
-*// 25% width, but not bigger. However, smaller is okay.*
+**example:**
+```scss
+@include flex-item(25%,0,1);
+// 25% width, but not bigger. However, smaller is okay.
+```
 
 ---
 ####  @include flex-center();
 Needs no variables. Creates a `flex-container()` which will vertically and horizontally center its children.
 
-**example:**  `@include flex-center()`
+**example:**
+```scss
+@include flex-center();
+```
 
 ---
 ####  @include linear-gradient($direction, $fromColor, $toColor);
 Creates a simple linear gradient from one color to another. Includes lots of browser vendors if you want them.
 
-**example:**  `@include flex-container(to left, $red, $blue);`
+**example:**
+```scss
+@include flex-container(to right, $red, $blue);
+// gradient goes from your red color (left side) to your blue color (right side)
+```
 
 ---
 ####  @include radial-gradient($from, $to);
 Always from the center in this case.
 
-**example:**  `@include radial-gradient(#999900, #186895);`
+**example:**
+```scss
+@include radial-gradient(#999900, #186895);
+```
 
 ---
 ####  @include position($type, $top:null, $right:null, $bottom:null, $left:null)
@@ -91,13 +107,20 @@ Accepts either `desktop` or `mobile` as values. Any code put inside will be medi
 ##  Extends
 Not quite as many of them, but still stuff I use all the time.
 
-####  @extend %truncate;
+####  %truncate;
 This will tell your element not to wrap, and any text that runs too long will be cut of with an ellipsis.
+```scss
+@extend %truncate;
+```
 
 ---
 ####  @extend %commalist;
-This will turn your ol or ul into a comma separated list (with and and without an oxford comma)
+This will turn your ol or ul into a comma separated list (with the word "and" and without an oxford comma). So the markup for 
+
 <ul><li>one</li><li>two</li><li>three</li><li>four</li></ul>
 becomes
 
 <strong>one, two, three and four</strong>
+```scss
+@extend %commalist;
+```
