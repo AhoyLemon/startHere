@@ -13,26 +13,37 @@ I'll walk through a couple of the generic javascript functions here.
 ####  randomNumber(min,max);
 Generates a random (whole) number between the minimum and maximum
 
-**example:**  `randomNumber(1,100);`
+**example:** 
+```js
+randomNumber(1,100);
+```
 
 ---  
-
 ####  addCommas(number);
 Takes any large number and formats it like 10,232,021
 
-**example:**  `addCommas(10232021);`
+**example:**  
+```js
+addCommas(10232021);
+```
 
-
+---
 ####  randomFrom(array);
 If you have a simple array, this will pluck a random selection from that array.
 
-**example:**  `let hello = randomFrom(WelcomeMessages);`
+**example:**
+```js
+let hello = randomFrom(WelcomeMessages);
+```
 
--- -
+---
 ####  shuffle(array);
 Have a simple array? Or an array of objects? Use this to shuffle the order of all of them.
 
-**example:**  `shuffle(deckOfCards);`
+**example:**
+```js
+shuffle(deckOfCards);
+```
 
 ---
 
@@ -49,12 +60,18 @@ if (findInArray(people,"Lemon") != null) {
 #### removeFromArray(haystack,needle);
 Want to remove a particular string (or object) from an array? Do it like this.
 
-**example:** `removeFromArray(listOfNames,"Lemon");`
+**example:**
+```js
+removeFromArray(listOfNames,"Lemon");
+```
 
 ---
-
 #### sendEvent(category,action,label,value);
-This is meant to work with [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/events). The function will send an event to Google with the variables specified. `label` and `value` are optional. Also, if you have a value, value *must* be a number (strings will cause an error in GA.
-**example:** `sendEvent(listOfNames,"Lemon");`
+This is meant to work with [Google Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/events). The function will send an event to Google with the variables specified. `label` and `value` are optional. Also, if you have a value, value *must* be a number (strings will cause an error in GA).
+**example:**
+```js
+sendEvent("Merch","Merch Bought","XL Shirt",25);
+```
+
 
 If you want to use [Matomo](https://matomo.org/) instead of GA (which is a good choice), look [here](https://matomo.org/docs/event-tracking/) for similar syntax.
