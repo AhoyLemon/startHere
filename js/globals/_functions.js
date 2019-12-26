@@ -15,7 +15,6 @@ function addCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
 function findInArray(haystack,needle) {
   let n = haystack.indexOf(needle);
   if (n > -1) {
@@ -31,6 +30,16 @@ function removeFromArray(haystack,needle) {
       haystack.splice(i, 1);
     }
   }
+}
+
+
+function percentOf(total,part) {
+  if (total == 0 || part == 0) {
+    return 0;
+  } else {
+    return Math.round((part * 100) / total);
+  }
+  
 }
 
 function sendEvent(c, a, l, v) {
