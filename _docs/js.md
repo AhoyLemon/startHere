@@ -36,16 +36,6 @@ Calculates the percentage of `part` within `total`
 percentOf(37,14);
 ```
 
-
-percentOf(total,part) {
-      if (total == 0 || part == 0) {
-        return 0;
-      } else {
-        return Math.round((part * 100) / total);
-      }
-      
-    },
-
 ---
 ####  randomFrom(array);
 If you have a simple array, this will pluck a random selection from that array.
