@@ -8,4 +8,4 @@ h5 { font-size: .83rem; }
 h6 { font-size: .75rem; }
 
 body { background:$body; color:$copy; font-family:$font-family; }
-a { @extend %textlink; }
+img { max-width: 100%; }
