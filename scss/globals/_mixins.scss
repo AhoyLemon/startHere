@@ -1,5 +1,5 @@
 @mixin background($size:cover, $position:center, $repeat:no-repeat) {
-   background-size:$size; background-position:$position; background-repeat:$repeat;
+  background-size:$size; background-position:$position; background-repeat:$repeat;
 }
 
 @mixin linear-gradient($direction, $fromColor, $toColor) {
