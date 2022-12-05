@@ -14,7 +14,7 @@ Also you'll need [Prepros](https://prepros.io). I'm a fan of it, and I avoid NPM
 This also assumes you want to write in Vue, Sass & Pug.
 
 ### Alright, how do I get started?
-Clone this repo and add the site folder to Prepros. hit the globe button in the top left to serve your page. If you see **It works.** in the middle of the screen, congratulations is working right
+Click [Use This Template](https://github.com/AhoyLemon/startHere/generate) to use this repo as a project template. Open up Prepros, add your new project to Prepros and hit the globe button to serve your page. If you see **It works.** in the middle of the screen, congratulations it's working right.
 
 ## Fundamentals
 I'll break this down into three sections, Pug, Vue and Sass.
