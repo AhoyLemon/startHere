@@ -46,24 +46,6 @@ Needs no variables. Creates a `flex-container()` which will vertically and horiz
 @include flex-center();
 ```
 
----
-####  @include linear-gradient($direction, $fromColor, $toColor);
-Creates a simple linear gradient from one color to another. Includes lots of browser vendors if you want them.
-
-**example:**
-```scss
-@include flex-container(to right, $red, $blue);
-// gradient goes from your red color (left side) to your blue color (right side)
-```
-
----
-####  @include radial-gradient($from, $to);
-Always from the center in this case.
-
-**example:**
-```scss
-@include radial-gradient(#999900, #186895);
-```
 
 ---
 ####  @include position($type, $top:null, $right:null, $bottom:null, $left:null)
@@ -83,7 +65,7 @@ I usee this as an easy way to define a centered internal column that will shrink
 
 **example:**
 ```scss
-@include inner()
+@include inner();
 ```
 
 ---
@@ -95,8 +77,8 @@ Accepts either `desktop` or `mobile` as values. Any code put inside will be medi
 **example:**
 ```scss
 @respond-to(desktop) {
-  .mobile-menu  {  display:none;  }
-  .desktop-menu  {  display:block;  }
+  .mobile-menu   {  display:none;  }
+  .desktop-menu  {  display:block; }
 }
 ```
 
@@ -107,20 +89,38 @@ Accepts either `desktop` or `mobile` as values. Any code put inside will be medi
 ##  Extends
 Not quite as many of them, but still stuff I use all the time.
 
-####  %truncate;
+#### %clearfix
+Got a `float:left;` or a `float:right` element? Then you'll want this on the container.
+
+```scss
+.container { @extend %clearfix;
+  .floating-thing { float:left; }
+}
+```
+... this will prevent your floating thing from screwing up your box.
+
+####  %truncate
 This will tell your element not to wrap, and any text that runs too long will be cut of with an ellipsis.
 ```scss
 @extend %truncate;
 ```
 
 ---
-####  @extend %commalist;
-This will turn your ol or ul into a comma separated list (with the word "and" and without an oxford comma). So the markup for 
+####  %commalist
+This will turn your ol or ul into a comma separated list (with the word "and" and without an oxford comma). So markup like...
 
-<ul><li>one</li><li>two</li><li>three</li><li>four</li></ul>
-becomes
+```html
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+  <li>four</li>
+</ul>
+```
+will look like....
 
-<strong>one, two, three and four</strong>
+> <strong>one, two, three and four</strong>
+
 ```scss
 @extend %commalist;
 ```
