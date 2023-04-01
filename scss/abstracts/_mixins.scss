@@ -93,7 +93,7 @@
   max-width: $w;
   margin-left: auto;
   margin-right: auto;
-  @media (max-width:($max-width + ($p * 2))) {
+  @media (max-width:($w + ($p * 2))) {
     width:100%;
     padding-left:$p; padding-right: $p;
   }
