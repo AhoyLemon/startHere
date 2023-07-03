@@ -19,8 +19,8 @@ This also assumes you want to write in Vue, Sass & Pug.
 3. If you see **It works.** in the middle of the screen, congratulations it's working right.
 
 ## Fundamentals
-I'll break this down into three sections, Pug, Vue and Sass.
+I'll break this down into three sections, Pug, Sass, & Javascript.
 
 1. [Pug](_docs/pug.md)
 2. [Sass](_docs/sass.md)
-3. [js](_docs/js.md)
+3. [Javascript](_docs/js.md)
