@@ -1,11 +1,10 @@
 .javascripts
-
   if testing
-    script(src="js/libraries/vue.full.js")
+    script(src="https://unpkg.com/vue@3/dist/vue.global.js")
     script.
       const testing = true;
   else
-    script(src="js/libraries/vue.min.js")
+    script(src="https://unpkg.com/vue@3/dist/vue.global.prod.js")
     script.
       const testing = false;
 

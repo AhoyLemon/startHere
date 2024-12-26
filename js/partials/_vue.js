@@ -1,20 +1,21 @@
-var app = new Vue({
-  el: '#app',
-  data: {
-    h1: "It works.",
-    h5: "Whenever you're ready, delete this text and start writing code."
-  },
+const { createApp } = Vue;
 
+const app = createApp({
+  data() {
+    return {
+      h1: "It works!",
+      h5: "Whenever you're ready, delete this text and start writing code.",
+    };
+  },
   methods: {
-
+    // ...existing code...
   },
-
   computed: {
-
+    // ...existing code...
   },
-
-  mounted: function() {
-
-  }
-
+  mounted() {
+    // ...existing code...
+  },
 });
+
+app.mount("#app");
