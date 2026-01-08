@@ -3,7 +3,7 @@ import pug from "pug";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import routes from "../pug.routes.js";
+import routes from "../routes/pug.routes.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,7 +12,7 @@ const projectRoot = path.resolve(__dirname, "..");
 /**
  * Compile a single Pug file
  */
-function compilePugFile(source, output) {
+function compilePugFile(source: string, output: string): boolean {
   try {
     const sourcePath = path.resolve(projectRoot, source);
     const outputPath = path.resolve(projectRoot, output);
@@ -35,8 +35,8 @@ function compilePugFile(source, output) {
     fs.writeFileSync(outputPath, html);
     console.log(`✓ ${source} → ${output}`);
     return true;
-  } catch (error) {
-    console.error(`❌ Error compiling ${source}:`, error.message);
+  } catch (error: any) {
+    console.error(`❌ Error compiling ${source}:`, error?.message ?? error);
     return false;
   }
 }

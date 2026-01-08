@@ -39,17 +39,20 @@ You'll need [Node.js](https://nodejs.org/) (v18 or higher) and npm installed. If
 
 I'll break this down into three sections, Pug, Sass, & TypeScript.
 
-1. [Pug](_docs/pug.md)
-2. [Sass](_docs/sass.md)
-3. [TypeScript](_docs/ts.md)
+For detailed information about routing configuration, see the [Pug Routing Documentation](_docs/routes.md).
+
+1. [Pug](_docs/pug.md) - HTML templating with routing configuration in `routes/pug.routes.ts`
+2. [Sass](_docs/sass.md) - Modern CSS with @use syntax
+3. [TypeScript](_docs/ts.md) - Type-safe JavaScript
+4. [Development Tools](_docs/tools.md) - Prettier, BrowserSync, and other helpful tools
 
 ## Deploying to GitHub Pages
 
 If you want to deploy this project to GitHub Pages, follow these steps:
 
 1. Navigate to the `.github/workflows/` directory.
-2. Rename the `static.yml.example` file to `static.yml`.
+2. Rename the `deploy.yml.example` file to `deploy.yml`.
 3. Commit and push the changes to your repository.
 4. GitHub Actions will automatically run the workflow to deploy your site to GitHub Pages.
 
-Make sure your repository settings are configured to use GitHub Pages, and the branch is set to `gh-pages` or the branch specified in the workflow file.
+Make sure your repository settings are configured to use GitHub Pages, and the branch is set to `github-pages` or the branch specified in the workflow file.

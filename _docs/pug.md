@@ -6,11 +6,11 @@ This uses [pug](https://pugjs.org/api/getting-started.html) for generating all H
 
 ## Okay, how's it work?
 
-`index.pug` serves as your main file. It imports in a couple of partials and then renders whatever you put in `main`. If you want to make additional pages, you'll need to add them to `pug.routes.js`.
+`index.pug` serves as your main file. It imports in a couple of partials and then renders whatever you put in `main`. If you want to make additional pages, you'll need to add them to `routes/pug.routes.ts`.
 
 ### Pug Routing
 
-This project uses a routing file (`pug.routes.js`) to define which Pug files compile to which HTML files. This gives you full control over your output structure.
+This project uses a routing file (`routes/pug.routes.ts`) to define which Pug files compile to which HTML files. This gives you full control over your output structure.
 
 **Example routes:**
 
