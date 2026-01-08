@@ -1,0 +1,84 @@
+# Deployment Exclusions
+
+# =====================
+
+# These files/folders should NOT be included in production deployment.
+
+# They are only needed for development and build processes.
+
+#
+
+# How to use this:
+
+# ----------------
+
+# - GitHub Pages: Add these patterns to your workflow's exclusion list
+
+# - Netlify: Add to .netlifyignore
+
+# - Vercel: Add to .vercelignore
+
+# - Manual deployment: Don't copy these folders to your server
+
+#
+
+# Excluded items:
+
+# ---------------
+
+# Source files (not needed in production)
+
+routes/
+scripts/
+pug/
+scss/
+ts/
+\_docs/
+
+# Configuration files
+
+tsconfig.json
+package.json
+package-lock.json
+pug.routes.js
+pug.routes.ts
+
+# Build tools
+
+node_modules/
+
+# Git/GitHub
+
+.git/
+.github/
+.gitignore
+
+# IDE/Editor
+
+.vscode/
+.idea/
+
+# Documentation
+
+README.md
+MIGRATION.md
+LICENSE
+
+# Environment
+
+.env
+.env.local
+
+# Keep these in deployment:
+
+# -------------------------
+
+# - \*.html files (your generated pages)
+
+# - css/ folder (compiled styles)
+
+# - js/min/ folder (compiled JavaScript)
+
+# - svg/ folder (static assets)
+
+# - Any other static assets (images, fonts, etc.)

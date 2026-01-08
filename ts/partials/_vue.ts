@@ -1,3 +1,10 @@
+/**
+ * Vue application setup
+ */
+
+// Import Vue from CDN (it should be loaded in the HTML)
+declare const Vue: any;
+
 const { createApp } = Vue;
 
 const app = createApp({
@@ -8,14 +15,16 @@ const app = createApp({
     };
   },
   methods: {
-    // ...existing code...
+    // Add your methods here
   },
   computed: {
-    // ...existing code...
+    // Add your computed properties here
   },
   mounted() {
-    // ...existing code...
+    // Code to run when the app is mounted
   },
 });
 
 app.mount("#app");
+
+export default app;
