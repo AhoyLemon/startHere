@@ -1,0 +1,44 @@
+{
+  "name": "starthere",
+  "version": "1.0.0",
+  "description": "A boilerplate for building static websites with Pug, Sass, and TypeScript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "build:sass": "sass scss/site.scss:css/site.css --no-source-map",
+    "build:pug": "node scripts/build-pug.js",
+    "build:ts": "tsc",
+    "build": "npm run build:sass && npm run build:pug && npm run build:ts",
+    "watch:sass": "sass scss/site.scss:css/site.css --no-source-map --watch",
+    "watch:pug": "node scripts/watch-pug.js",
+    "watch:ts": "tsc --watch",
+    "dev": "concurrently \"npm run watch:sass\" \"npm run watch:pug\" \"npm run watch:ts\" \"npm run serve\"",
+    "serve": "browser-sync start --server --files \"*.html, css/*.css, js/**/*.js\" --no-notify --no-open",
+    "test:sass": "sass scss/site.scss:css/site.css --no-source-map --style=compressed",
+    "test:ts": "tsc --noEmit",
+    "test": "npm run test:sass && npm run test:ts",
+    "clean": "rimraf css/*.css js/**/*.js js/**/*.js.map !js/globals !js/partials"
+  },
+  "keywords": [
+    "boilerplate",
+    "pug",
+    "sass",
+    "typescript"
+  ],
+  "author": "Lemon",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "browser-sync": "^3.0.2",
+    "chokidar": "^3.5.3",
+    "concurrently": "^8.2.2",
+    "pug": "^3.0.2",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
+}

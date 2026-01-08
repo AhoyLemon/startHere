@@ -2,15 +2,15 @@
 // https://sass-guidelin.es/#architecture
 
 // ABSRACTS are variables and mixins. (they should *never* add lines to the production CSS)
-@import "abstracts/variables"; 
-@import "abstracts/z-index";
-@import "abstracts/mixins";
-@import "abstracts/extends";
+@use "abstracts/variables" as vars;
+@use "abstracts/z-index" as *;
+@use "abstracts/mixins" as mix;
+@use "abstracts/extends";
 
 
 // BASE is for things like global site styles and typography.
-@import "base/reset"; 
-@import "base/defaults"; 
+@use "base/reset"; 
+@use "base/defaults"; 
 
 
 // LIBRARIES is for third party Scss 
@@ -29,4 +29,4 @@
 
 
 // FINALLY, we should have a place for things we still need to get to...
-@import "todo/shame";
+@use "todo/shame";

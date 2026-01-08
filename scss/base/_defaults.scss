@@ -1,9 +1,11 @@
+@use "../abstracts/variables" as vars;
+
 [v-cloak] { display: none !important; }
 
 html { font-size:100%; }
-body { background:$body; color:$copy; font-family:$font-family; font-weight: $medium; line-height: 1.75; }
+body { background:vars.$body; color:vars.$copy; font-family:vars.$font-family; font-weight: vars.$medium; line-height: 1.75; }
 
-h1, h2, h3, h4, h5 { font-family: $headline; margin: 0 0 1.86rem; font-weight: $medium; line-height: 1.3; }
+h1, h2, h3, h4, h5 { font-family: vars.$headline; margin: 0 0 1.86rem; font-weight: vars.$medium; line-height: 1.3; }
 
 h1 { font-size: clamp(2.488rem, 7vw, 4.209rem); }
 h2 { font-size: clamp(2.074rem, 5.3vw, 3.157rem); }

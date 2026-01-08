@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 %clearfix {
   &:after { content: ""; display: table;clear: both; }
 }
@@ -11,6 +13,6 @@
   }
 }
 
-%textlink { text-decoration: none; color:$link;
+%textlink { text-decoration: none; color:vars.$link;
   &:hover { border-bottom: 0.05em solid currentColor; }
 }
