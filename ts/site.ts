@@ -4,17 +4,17 @@
  */
 
 // Import utility functions
-import * as Functions from './globals/_functions.js';
+import * as Functions from "./globals/_functions.js";
 
 // Import variables
-import * as Variables from './partials/_variables.js';
+import * as Variables from "./partials/_variables.js";
 
 // Import and initialize Vue app
-import './partials/_vue.js';
+import "./partials/_vue.js";
 
 // Make functions available globally for convenience
 // (optional - you can also import them where needed)
 (window as any).Functions = Functions;
 (window as any).Variables = Variables;
 
-console.log('App initialized');
+console.log("App initialized");

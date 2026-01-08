@@ -76,10 +76,10 @@ export function sendEvent(
   category: string,
   action: string,
   label?: string,
-  value?: number
+  value?: number,
 ): void {
   // Check if GA is available
-  if (typeof ga !== 'undefined') {
+  if (typeof ga !== "undefined") {
     const eventData: any = {
       eventCategory: category,
       eventAction: action,
@@ -93,7 +93,7 @@ export function sendEvent(
       eventData.eventValue = value;
     }
 
-    ga('send', 'event', eventData);
+    ga("send", "event", eventData);
     // Uncomment for debugging:
     // console.log('Event sent:', eventData);
   }

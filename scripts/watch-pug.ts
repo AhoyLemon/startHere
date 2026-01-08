@@ -1,13 +1,13 @@
-import chokidar from 'chokidar';
-import pug from 'pug';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import routes from '../pug.routes.js';
+import chokidar from "chokidar";
+import pug from "pug";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import routes from "../pug.routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, '..');
+const projectRoot = path.resolve(__dirname, "..");
 
 /**
  * Compile a single Pug file
@@ -16,7 +16,7 @@ function compilePugFile(source, output) {
   try {
     const sourcePath = path.resolve(projectRoot, source);
     const outputPath = path.resolve(projectRoot, output);
-    
+
     if (!fs.existsSync(sourcePath)) {
       console.error(`❌ Source file not found: ${source}`);
       return false;
@@ -24,7 +24,7 @@ function compilePugFile(source, output) {
 
     const html = pug.renderFile(sourcePath, {
       pretty: true,
-      basedir: path.resolve(projectRoot, 'pug')
+      basedir: path.resolve(projectRoot, "pug"),
     });
 
     const outputDir = path.dirname(outputPath);
@@ -45,7 +45,7 @@ function compilePugFile(source, output) {
  * Rebuild all Pug files
  */
 function rebuildAll() {
-  console.log('Rebuilding all Pug files...');
+  console.log("Rebuilding all Pug files...");
   Object.entries(routes).forEach(([source, output]) => {
     compilePugFile(source, output);
   });
@@ -55,54 +55,54 @@ function rebuildAll() {
  * Watch Pug files for changes
  */
 function watchPug() {
-  console.log('Watching Pug files for changes...');
-  
+  console.log("Watching Pug files for changes...");
+
   // Initial build
   rebuildAll();
 
   // Watch all .pug files
-  const watcher = chokidar.watch('pug/**/*.pug', {
+  const watcher = chokidar.watch("pug/**/*.pug", {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
-    cwd: projectRoot
+    cwd: projectRoot,
   });
 
-  watcher.on('change', (filePath) => {
+  watcher.on("change", (filePath) => {
     console.log(`\n🔄 File changed: ${filePath}`);
-    
+
     // If it's a partial (starts with _), rebuild all files
     const fileName = path.basename(filePath);
-    if (fileName.startsWith('_')) {
-      console.log('Partial file changed, rebuilding all...');
+    if (fileName.startsWith("_")) {
+      console.log("Partial file changed, rebuilding all...");
       rebuildAll();
     } else {
       // Otherwise, find and rebuild the specific file
-      const normalizedPath = filePath.replace(/\\/g, '/');
-      const matchingRoute = Object.entries(routes).find(([source]) => 
-        source.replace(/\\/g, '/') === normalizedPath
+      const normalizedPath = filePath.replace(/\\/g, "/");
+      const matchingRoute = Object.entries(routes).find(
+        ([source]) => source.replace(/\\/g, "/") === normalizedPath,
       );
-      
+
       if (matchingRoute) {
         const [source, output] = matchingRoute;
         compilePugFile(source, output);
       } else {
-        console.log('File not in routes, rebuilding all to be safe...');
+        console.log("File not in routes, rebuilding all to be safe...");
         rebuildAll();
       }
     }
   });
 
-  watcher.on('add', (filePath) => {
+  watcher.on("add", (filePath) => {
     console.log(`\n➕ File added: ${filePath}`);
     rebuildAll();
   });
 
-  watcher.on('unlink', (filePath) => {
+  watcher.on("unlink", (filePath) => {
     console.log(`\n➖ File removed: ${filePath}`);
     rebuildAll();
   });
 
-  console.log('\n👀 Watching for changes... (Press Ctrl+C to stop)\n');
+  console.log("\n👀 Watching for changes... (Press Ctrl+C to stop)\n");
 }
 
 watchPug();

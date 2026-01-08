@@ -5,18 +5,21 @@ This guide explains the changes made when migrating from Prepros to npm-based to
 ## What Changed
 
 ### 1. Build System
+
 - **Before:** Prepros handled compilation
 - **After:** npm scripts handle all builds
 - **Action:** Run `npm install` to get dependencies
 
 ### 2. Sass (@import → @use)
+
 - **Before:** Used `@import` for Sass files
 - **After:** Uses modern `@use` syntax with namespaces
 - **Action:** When adding new Sass, use:
+
   ```scss
   @use "abstracts/variables" as vars;
   @use "abstracts/mixins" as mix;
-  
+
   body {
     background: vars.$body;
     @include mix.flex-container();
@@ -24,25 +27,28 @@ This guide explains the changes made when migrating from Prepros to npm-based to
   ```
 
 ### 3. JavaScript → TypeScript
+
 - **Before:** JavaScript with Prepros concatenation
 - **After:** TypeScript with ES6 modules
 - **Action:** Write TypeScript in `ts/` folder, it compiles to `js/min/`
   ```typescript
-  import { randomNumber } from './globals/_functions.js';
+  import { randomNumber } from "./globals/_functions.js";
   ```
 
 ### 4. Pug Routing
+
 - **Before:** All .pug files compiled automatically
 - **After:** Routes defined in `pug.routes.js`
 - **Action:** Add new pages to the routes file:
   ```javascript
   export const routes = {
-    'pug/index.pug': 'index.html',
-    'pug/about.pug': 'about/index.html',
+    "pug/index.pug": "index.html",
+    "pug/about.pug": "about/index.html",
   };
   ```
 
 ### 5. Setup Script
+
 - **New Feature:** Run `npm run setup` when creating a new project
 - **Action:** This prompts for project name, URL, and description
 
@@ -73,6 +79,7 @@ npm run build:ts
 ## File Structure Changes
 
 ### Added
+
 - `package.json` - npm configuration
 - `tsconfig.json` - TypeScript configuration
 - `pug.routes.js` - Pug routing configuration
@@ -81,11 +88,13 @@ npm run build:ts
 - `.gitignore` - Git ignore file
 
 ### Removed
+
 - `prepros.config` - No longer needed
 - `prepros-6.config` - No longer needed
 - `js/` - Replaced by `ts/` (output goes to `js/min/`)
 
 ### Modified
+
 - `scss/site.scss` - Now uses `@use` instead of `@import`
 - All SCSS files with variables - Use namespaced access
 - `pug/partials/_javascripts.pug` - Loads module script
@@ -94,6 +103,7 @@ npm run build:ts
 ## Common Tasks
 
 ### Adding a New Page
+
 1. Create `pug/newpage.pug`
 2. Add to `pug.routes.js`:
    ```javascript
@@ -102,14 +112,16 @@ npm run build:ts
 3. Build or watch to generate HTML
 
 ### Adding TypeScript Code
+
 1. Create `.ts` file in `ts/` folder
 2. Import where needed:
    ```typescript
-   import { myFunction } from './myfile.js';
+   import { myFunction } from "./myfile.js";
    ```
 3. Build or watch to compile
 
 ### Using Sass Variables
+
 ```scss
 @use "abstracts/variables" as vars;
 
@@ -120,6 +132,7 @@ npm run build:ts
 ```
 
 ### Using Sass Mixins
+
 ```scss
 @use "abstracts/mixins" as mix;
 
@@ -132,17 +145,21 @@ npm run build:ts
 ## Troubleshooting
 
 **Error: Cannot find module**
+
 - Run `npm install` to install dependencies
 
 **Sass compilation error about undefined variables**
+
 - Make sure you're using `@use` with proper namespace
 - Example: `vars.$variable-name` not `$variable-name`
 
 **Pug file not compiling**
+
 - Check that it's listed in `pug.routes.js`
-- Partial files (starting with _) don't need routes
+- Partial files (starting with \_) don't need routes
 
 **TypeScript errors**
+
 - Run `npm test` to see all errors
 - Check that imports end with `.js` (not `.ts`)
 

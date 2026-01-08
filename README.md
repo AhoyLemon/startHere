@@ -14,6 +14,10 @@ This project uses npm for build tooling, with Pug for HTML templating, Sass for 
 
 This also assumes you want to write in Vue, Sass & Pug.
 
+### Prerequisites
+
+You'll need [Node.js](https://nodejs.org/) (v18 or higher) and npm installed. If you don't have them, [download Node.js here](https://nodejs.org/) (npm comes with it).
+
 ### Alright, how do I get started?
 
 1. Click [Use This Template](https://github.com/AhoyLemon/startHere/generate) to use this repo as a project template.
@@ -30,9 +34,6 @@ This also assumes you want to write in Vue, Sass & Pug.
 - `npm run dev` - Start development server with live reload
 - `npm run build` - Build all files for production
 - `npm test` - Check for Sass and TypeScript errors
-- `npm run build:sass` - Compile Sass only
-- `npm run build:pug` - Compile Pug only
-- `npm run build:ts` - Compile TypeScript only
 
 ## Fundamentals
 
@@ -40,7 +41,7 @@ I'll break this down into three sections, Pug, Sass, & TypeScript.
 
 1. [Pug](_docs/pug.md)
 2. [Sass](_docs/sass.md)
-3. [TypeScript](_docs/js.md)
+3. [TypeScript](_docs/ts.md)
 
 ## Deploying to GitHub Pages
 

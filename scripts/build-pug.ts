@@ -1,19 +1,19 @@
-import pug from 'pug';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import routes from '../pug.routes.js';
+import pug from "pug";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import routes from "../pug.routes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, '..');
+const projectRoot = path.resolve(__dirname, "..");
 
 /**
  * Build all Pug files according to the routing configuration
  */
 function buildPug() {
-  console.log('Building Pug files...');
-  
+  console.log("Building Pug files...");
+
   let successCount = 0;
   let errorCount = 0;
 
@@ -21,7 +21,7 @@ function buildPug() {
     try {
       const sourcePath = path.resolve(projectRoot, source);
       const outputPath = path.resolve(projectRoot, output);
-      
+
       // Check if source file exists
       if (!fs.existsSync(sourcePath)) {
         console.error(`❌ Source file not found: ${source}`);
@@ -32,7 +32,7 @@ function buildPug() {
       // Compile Pug to HTML
       const html = pug.renderFile(sourcePath, {
         pretty: true,
-        basedir: path.resolve(projectRoot, 'pug')
+        basedir: path.resolve(projectRoot, "pug"),
       });
 
       // Ensure output directory exists
@@ -51,8 +51,10 @@ function buildPug() {
     }
   });
 
-  console.log(`\n✨ Build complete: ${successCount} successful, ${errorCount} failed`);
-  
+  console.log(
+    `\n✨ Build complete: ${successCount} successful, ${errorCount} failed`,
+  );
+
   if (errorCount > 0) {
     process.exit(1);
   }
