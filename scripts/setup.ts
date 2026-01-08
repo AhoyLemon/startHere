@@ -26,7 +26,7 @@ async function setup() {
       name: "projectName",
       message: "What is the name of your project?",
       initial: "my-new-project",
-      validate: (value) =>
+      validate: (value: any) =>
         value.length > 0 ? true : "Project name is required",
     },
     {
@@ -63,7 +63,7 @@ async function setup() {
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
     console.log("✓ Updated package.json");
   } catch (error) {
-    console.error("❌ Error updating package.json:", error.message);
+    console.error("❌ Error updating package.json:", (error as any).message);
   }
 
   // Update Pug variables
@@ -101,7 +101,7 @@ async function setup() {
     fs.writeFileSync(pugVarsPath, pugVars);
     console.log("✓ Updated Pug variables");
   } catch (error) {
-    console.error("❌ Error updating Pug variables:", error.message);
+    console.error("❌ Error updating Pug variables:", (error as any).message);
   }
 
   // Update TypeScript variables
@@ -124,7 +124,7 @@ async function setup() {
     fs.writeFileSync(tsVarsPath, tsVars);
     console.log("✓ Updated TypeScript variables");
   } catch (error) {
-    console.error("❌ Error updating TypeScript variables:", error.message);
+    console.error("❌ Error updating TypeScript variables:", (error as any).message);
   }
 
   console.log("\n✨ Setup complete! Your project is ready to go.");

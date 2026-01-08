@@ -3,7 +3,7 @@ import pug from "pug";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import routes from "../routes/pug.routes.ts";
+import routes from "../routes/pug.routes";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
