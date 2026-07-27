@@ -30,9 +30,7 @@
 
 routes/
 scripts/
-pug/
-scss/
-ts/
+src/
 \_docs/
 
 # Configuration files
@@ -42,6 +40,7 @@ package.json
 package-lock.json
 pug.routes.js
 pug.routes.ts
+bs-config.cjs
 
 # Build tools
 
@@ -79,6 +78,6 @@ LICENSE
 
 # - js/min/ folder (compiled JavaScript)
 
-# - svg/ folder (static assets)
+# - svg/ and img/ folders (static assets staged from src/ by the deploy workflow)
 
 # - Any other static assets (images, fonts, etc.)

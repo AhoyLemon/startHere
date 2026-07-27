@@ -7,6 +7,10 @@ js/min/
 *.html
 !_docs/
 
+# Static assets staged from src/ for deployment
+/svg/
+/img/
+
 # TypeScript
 *.tsbuildinfo
 

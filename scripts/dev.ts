@@ -258,7 +258,7 @@ async function startDev() {
   startProcess(
     "Sass",
     "sass",
-    ["scss/site.scss:css/site.css", "--no-source-map", "--watch"],
+    ["src/scss/site.scss:css/site.css", "--no-source-map", "--watch"],
     spinner,
   );
 
@@ -269,14 +269,7 @@ async function startDev() {
   startProcess(
     "BrowserSync",
     "browser-sync",
-    [
-      "start",
-      "--server",
-      "--files",
-      "*.html, css/*.css, js/**/*.js",
-      "--no-notify",
-      "--no-open",
-    ],
+    ["start", "--config", "bs-config.cjs"],
     spinner,
   );
 

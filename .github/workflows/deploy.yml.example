@@ -38,6 +38,11 @@ jobs:
             exit 1
           fi
 
+      - name: 📁 Stage static assets for deploy
+        run: |
+          cp -r src/svg svg
+          cp -r src/img img
+
       - name: 🧑‍🔧 Setup Pages
         uses: actions/configure-pages@v5
       - name: 📤 Uploading artifact

@@ -6,14 +6,14 @@ I use some (client-side) Vue in my projects. Personally, I don't like to go craz
 
 `site.ts` is the main entry point and uses ES6 imports. It imports utility functions from `globals/_functions.ts`, variables from `partials/_variables.ts`, and initializes the Vue app from `partials/_vue.ts`.
 
-The TypeScript files in the `ts/` folder are compiled to JavaScript in the `js/min/` folder. The compiled code uses ES modules and is loaded with `type="module"` in the HTML.
+The TypeScript files in the `src/ts/` folder are compiled to JavaScript in the `js/min/` folder. The compiled code uses ES modules and is loaded with `type="module"` in the HTML.
 
 ### Project Structure
 
-- `ts/site.ts` - Main entry point
-- `ts/globals/_functions.ts` - Utility functions
-- `ts/partials/_variables.ts` - Site-wide variables
-- `ts/partials/_vue.ts` - Vue app initialization
+- `src/ts/site.ts` - Main entry point
+- `src/ts/globals/_functions.ts` - Utility functions
+- `src/ts/partials/_variables.ts` - Site-wide variables
+- `src/ts/partials/_vue.ts` - Vue app initialization
 
 To use functions from another file, simply import them:
 
