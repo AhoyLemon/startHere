@@ -117,7 +117,7 @@ These are automatically installed when you run `npm install`. You don't need to 
 
 **What it does:** Compiles your modern Sass/SCSS to CSS.
 
-**In this project:** Compiles `scss/site.scss` → `css/site.css`
+**In this project:** Compiles `src/scss/site.scss` → `css/site.css`
 
 **Features:**
 
@@ -129,7 +129,7 @@ These are automatically installed when you run `npm install`. You don't need to 
 
 **What it does:** Compiles TypeScript to JavaScript and type-checks your code.
 
-**In this project:** Compiles `ts/**/*.ts` → `js/min/**/*.js`
+**In this project:** Compiles `src/ts/**/*.ts` → `js/min/**/*.js`
 
 **Features:**
 

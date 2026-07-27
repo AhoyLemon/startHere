@@ -70,6 +70,7 @@ async function setup() {
   try {
     const pugVarsPath = path.join(
       projectRoot,
+      "src",
       "pug",
       "partials",
       "_variables.pug",
@@ -108,6 +109,7 @@ async function setup() {
   try {
     const tsVarsPath = path.join(
       projectRoot,
+      "src",
       "ts",
       "partials",
       "_variables.ts",

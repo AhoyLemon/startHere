@@ -16,8 +16,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          # cache removed because repository doesn't include a lockfile
+          node-version: "current"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install

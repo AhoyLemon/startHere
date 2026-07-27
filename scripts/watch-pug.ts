@@ -24,7 +24,7 @@ function compilePugFile(source: string, output: string): boolean {
 
     const html = pug.renderFile(sourcePath, {
       pretty: true,
-      basedir: path.resolve(projectRoot, "pug"),
+      basedir: path.resolve(projectRoot, "src/pug"),
     });
 
     const outputDir = path.dirname(outputPath);
@@ -61,7 +61,7 @@ function watchPug() {
   rebuildAll();
 
   // Watch all .pug files
-  const watcher = chokidar.watch("pug/**/*.pug", {
+  const watcher = chokidar.watch("src/pug/**/*.pug", {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
     cwd: projectRoot,

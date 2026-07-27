@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
@@ -17,6 +17,6 @@
     "sourceMap": true,
     "removeComments": true
   },
-  "include": ["ts/**/*", "scripts/**/*", "types/**/*"],
+  "include": ["src/ts/**/*", "scripts/**/*", "types/**/*"],
   "exclude": ["node_modules"]
 }

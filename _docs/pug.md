@@ -16,9 +16,9 @@ This project uses a routing file (`routes/pug.routes.ts`) to define which Pug fi
 
 ```javascript
 export const routes = {
-  "pug/index.pug": "index.html", // Root level
-  "pug/about.pug": "about/index.html", // Nested folder
-  "pug/contact.pug": "contact/index.html", // Nested folder
+  "src/pug/index.pug": "index.html", // Root level
+  "src/pug/about.pug": "about/index.html", // Nested folder
+  "src/pug/contact.pug": "contact/index.html", // Nested folder
 };
 ```
 

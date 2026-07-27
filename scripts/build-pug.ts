@@ -32,7 +32,7 @@ function buildPug() {
       // Compile Pug to HTML
       const html = pug.renderFile(sourcePath, {
         pretty: true,
-        basedir: path.resolve(projectRoot, "pug"),
+        basedir: path.resolve(projectRoot, "src/pug"),
       });
 
       // Ensure output directory exists

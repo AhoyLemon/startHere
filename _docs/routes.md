@@ -13,25 +13,25 @@ This configuration file defines how Pug templates are compiled to HTML files. It
 Each route maps a source Pug file to an output HTML file:
 
 ```
-'pug/source.pug' => 'output.html'
+'src/pug/source.pug' => 'output.html'
 ```
 
 ## Route Types
 
 1. **Root-level pages:**
-   - `'pug/index.pug': 'index.html'`
+   - `'src/pug/index.pug': 'index.html'`
    - Creates: `/index.html` (accessible at `/`)
 
 2. **Nested pages (SEO-friendly URLs):**
-   - `'pug/about.pug': 'about/index.html'`
+   - `'src/pug/about.pug': 'about/index.html'`
    - Creates: `/about/index.html` (accessible at `/about/`)
 
 3. **Deep nesting:**
-   - `'pug/blog/post.pug': 'blog/post/index.html'`
+   - `'src/pug/blog/post.pug': 'blog/post/index.html'`
    - Creates: `/blog/post/index.html` (accessible at `/blog/post/`)
 
 4. **Custom structures:**
-   - `'pug/contact.pug': 'get-in-touch.html'`
+   - `'src/pug/contact.pug': 'get-in-touch.html'`
    - Creates: `/get-in-touch.html` (accessible at `/get-in-touch.html`)
 
 ## Partial Files
@@ -42,7 +42,7 @@ Examples: `_head.pug`, `_footer.pug`, `_mixins.pug`
 
 ## Adding New Pages
 
-1. Create your Pug file (e.g., `pug/services.pug`)
+1. Create your Pug file (e.g., `src/pug/services.pug`)
 2. Add a route in the configuration file
 3. Run `npm run dev` or `npm run build`
 4. Your HTML will be generated automatically
