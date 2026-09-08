@@ -26,8 +26,9 @@ async function setup() {
       name: "projectName",
       message: "What is the name of your project?",
       initial: "my-new-project",
-      validate: (value: any) =>
-        value.length > 0 ? true : "Project name is required",
+      format: (value: string) => value.trim().replace(/[‐-―−]/g, "-"),
+      validate: (value: string) =>
+        value.trim().length > 0 ? true : "Project name is required",
     },
     {
       type: "text",
