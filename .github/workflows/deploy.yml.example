@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout source Git branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: 🔍 Check for testing mode or localhost
         run: |
@@ -44,14 +44,14 @@ jobs:
           cp -r src/img img
 
       - name: 🧑‍🔧 Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: 📤 Uploading artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: "."
       - name: 🚢 Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
       - name: 🫠 This job's status is ${{ job.status }}.
         run: echo "🫠 This job's status is ${{ job.status }}."
       - name: 🌐 Deployed to ${{ steps.deployment.outputs.page_url }}.
